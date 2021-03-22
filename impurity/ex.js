@@ -24,16 +24,20 @@ function getStudentsByName(studentsArray) {
 }
 
 function getStudentsByID(studentsArray) {
-  var students = studentsArray.slice();
+  var originalStudents = students.slice();
+  students = studentsArray;
   sortStudentsByID();
+  studentsArray = students;
+  students = originalStudents;
+  return studentsArray;
+}
+
+function sortStudentsByID() {
+  // Don't modify this function
+  students.sort(function byID(s1, s2) {
+    return s1.id - s2.id;
+  });
   return students;
-  function sortStudentsByID() {
-    // Don't modify this function
-    students.sort(function byID(s1, s2) {
-      return s1.id - s2.id;
-    });
-    return students;
-  }
 }
 
 // *************************************
