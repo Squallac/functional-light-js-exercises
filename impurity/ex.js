@@ -1,38 +1,44 @@
 "use strict";
 
 var students = [
-	{ id: 260, name: "Kyle" },
-	{ id: 729, name: "Susan" },
-	{ id: 42, name: "Frank" },
-	{ id: 74, name: "Jessica" },
-	{ id: 491, name: "Ally" }
+  { id: 260, name: "Kyle" },
+  { id: 729, name: "Susan" },
+  { id: 42, name: "Frank" },
+  { id: 74, name: "Jessica" },
+  { id: 491, name: "Ally" },
 ];
 
-function sortStudentsByName() {
-	// Don't modify this function
-	students.sort(function byName(s1,s2){
-		if (s1.name < s2.name) return -1;
-		else if (s1.name > s2.name) return 1;
-		else return 0;
-	});
-	return students;
+function getStudentsByName(studentsArray) {
+  var students = studentsArray.slice();
+  sortStudentsByName();
+  return students;
+  function sortStudentsByName() {
+    // Don't modify this function
+    students.sort(function byName(s1, s2) {
+      if (s1.name < s2.name) return -1;
+      else if (s1.name > s2.name) return 1;
+      else return 0;
+    });
+    return students;
+  }
 }
 
-function sortStudentsByID() {
-	// Don't modify this function
-	students.sort(function byID(s1,s2){
-		return s1.id - s2.id;
-	});
-	return students;
+function getStudentsByID(studentsArray) {
+  var students = studentsArray.slice();
+  sortStudentsByID();
+  return students;
+  function sortStudentsByID() {
+    // Don't modify this function
+    students.sort(function byID(s1, s2) {
+      return s1.id - s2.id;
+    });
+    return students;
+  }
 }
 
 // *************************************
 
 // modify/move this function
-function getStudentsByName() { return students; }
-
-// modify/move this function
-function getStudentsByID() { return students; }
 
 // *************************************
 
